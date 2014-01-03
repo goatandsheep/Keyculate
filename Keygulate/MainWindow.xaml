@@ -18,6 +18,9 @@
             <GradientStop Color="White" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
+
+
+
     <Grid Width="550" Height="350">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -26,17 +29,23 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25"/>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="475"/>
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="actionsList" HorizontalAlignment="Left" Height="266" Grid.Row="1" TextWrapping="Wrap" Text="list" VerticalAlignment="Top" Width="400" Margin="3,34,0,0" Grid.Column="1"/>
-        <Border BorderBrush="{x:Null}" Margin="0,0,2,0" Grid.RowSpan="3"/>
-        <Label x:Name="label_for_actions" Grid.ColumnSpan="2" Content="actions" Height="29" Grid.Row="1" VerticalAlignment="Top" Margin="23,0,0,0" FontSize="16" Foreground="#FF646464"/>
-        <Button x:Name="ClickExit" Content="" Grid.Column="2" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Click="ClickExit_Click" MouseEnter="ClickExit_MouseEnter" MouseLeave="ClickExit_MouseLeave" MouseLeftButtonDown="ClickExit_MouseLeftButtonDown" BorderThickness="0">
+        <TextBlock x:Name="actionsList" HorizontalAlignment="Left" Height="266" Grid.Row="1" TextWrapping="Wrap" Text="list" VerticalAlignment="Top" Width="393" Margin="10,34,0,0" Grid.Column="2"/>
+        <Border BorderBrush="{x:Null}" Margin="0,0,1,0" Grid.RowSpan="3"/>
+        <Label x:Name="label_for_actions" Content="actions" Height="29" Grid.Row="1" VerticalAlignment="Top" Margin="2,0,0,0" FontSize="16" Foreground="#FF646464" Grid.Column="2"/>
+        <Button x:Name="ClickExit" Content="" Grid.Column="3" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Click="Exit_Click" MouseEnter="Exit_MouseEnter" MouseLeave="Exit_MouseLeave" MouseLeftButtonDown="Exit_MouseLeftButtonDown" BorderThickness="0">
             <Button.Background>
-                <ImageBrush ImageSource="folder.ico"/>
+                <ImageBrush ImageSource="folder.ico" Stretch="Fill" />
             </Button.Background>
         </Button>
-        <Button x:Name="BorderButtonTop" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="525" Height="25" BorderBrush="{x:Null}" Background="Black" BorderThickness="0"/>
+        <Button x:Name="BorderButtonTop" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Grid.ColumnSpan="3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="525" Height="25" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Click="Exit_Click" MouseEnter="Exit_MouseEnter" MouseLeave="Exit_MouseLeave" MouseLeftButtonDown="Exit_MouseLeftButtonDown" BorderThickness="0" Background="Transparent" Padding="0" Opacity="0.25" />
+        <Button x:Name="BorderButtonRight" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Grid.Column="3" Content="" HorizontalAlignment="Left" Height="325" Grid.RowSpan="2" VerticalAlignment="Top" Width="25" BorderBrush="Transparent" Foreground="Transparent"  Cursor="Hand" Click="Exit_Click" MouseEnter="Exit_MouseEnter" MouseLeave="Exit_MouseLeave" MouseLeftButtonDown="Exit_MouseLeftButtonDown" BorderThickness="0" Background="Transparent" Padding="0" Opacity="0.25"/>
+        <Button x:Name="BorderButtonBottom" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Grid.ColumnSpan="3" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="25" Grid.Row="2" VerticalAlignment="Top" Width="525"  BorderBrush="Transparent" Foreground="Transparent"  Cursor="Hand" Click="Exit_Click" MouseEnter="Exit_MouseEnter" MouseLeave="Exit_MouseLeave" MouseLeftButtonDown="Exit_MouseLeftButtonDown" BorderThickness="0" Background="Transparent" Padding="0" Opacity="0.25"/>
+        <Button x:Name="BorderButtonLeft" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  Content="" HorizontalAlignment="Left" Height="325" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Width="25"  BorderBrush="Transparent" Foreground="Transparent"  Cursor="Hand" Click="Exit_Click" MouseEnter="Exit_MouseEnter" MouseLeave="Exit_MouseLeave" MouseLeftButtonDown="Exit_MouseLeftButtonDown" BorderThickness="0" Background="Transparent" Padding="0" Opacity="0.25"/>
     </Grid>
 </Window>
+
+    

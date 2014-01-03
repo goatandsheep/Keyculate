@@ -28,7 +28,6 @@ namespace Keygulate
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         //GlobalKeyboardHook keyLog;
@@ -79,22 +78,31 @@ namespace Keygulate
 
         //the following functions are functions that deal witht the layout
 
-        private void ClickExit_Click(object sender, RoutedEventArgs e)
+        //used by BorderButtonBottom, BorderButtonLeft, BorderButtonRight, BorderButtonTop, and ClickExit
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void ClickExit_MouseEnter(object sender, EventArgs e)
+        private void Exit_MouseEnter(object sender, EventArgs e)
         {
             //change image to hover image
+            BorderButtonTop.Background = Brushes.Black;
+            BorderButtonRight.Background = Brushes.Black;
+            BorderButtonBottom.Background = Brushes.Black;
+            BorderButtonLeft.Background = Brushes.Black;
         }
 
-        private void ClickExit_MouseLeave(object sender, EventArgs e)
+        private void Exit_MouseLeave(object sender, EventArgs e)
         {
             //change image back to original
+            BorderButtonTop.Background = Brushes.Transparent;
+            BorderButtonRight.Background = Brushes.Transparent;
+            BorderButtonBottom.Background = Brushes.Transparent;
+            BorderButtonLeft.Background = Brushes.Transparent;
         }
 
-        private void ClickExit_MouseLeftButtonDown(object sender, EventArgs e)
+        private void Exit_MouseLeftButtonDown(object sender, EventArgs e)
         {
             //change image to click image
         }
