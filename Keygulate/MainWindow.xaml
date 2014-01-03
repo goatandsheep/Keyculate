@@ -1,11 +1,17 @@
 ﻿<Window x:Name="MainWindow1" x:Class="Keygulate.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title=""
+        Title="Keyculate"
         Height="350"
         Width="550"
         WindowStyle="None"
-        Visibility="Visible">
+        Visibility="Visible" AllowsTransparency="True" BorderThickness="1">
+    <Window.BorderBrush>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF48F7FF" Offset="1"/>
+            <GradientStop Color="White" Offset="0.9"/>
+        </RadialGradientBrush>
+    </Window.BorderBrush>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFF1FFFE" Offset="0"/>
@@ -20,10 +26,17 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="500"/>
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Height="300" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="400" Margin="25,0,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="actionsList" HorizontalAlignment="Left" Height="266" Grid.Row="1" TextWrapping="Wrap" Text="list" VerticalAlignment="Top" Width="400" Margin="3,34,0,0" Grid.Column="1"/>
         <Border BorderBrush="{x:Null}" Margin="0,0,2,0" Grid.RowSpan="3"/>
+        <Label x:Name="label_for_actions" Grid.ColumnSpan="2" Content="actions" Height="29" Grid.Row="1" VerticalAlignment="Top" Margin="23,0,0,0" FontSize="16" Foreground="#FF646464"/>
+        <Button x:Name="ClickExit" Content="" Grid.Column="2" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Click="ClickExit_Click" MouseEnter="ClickExit_MouseEnter" MouseLeave="ClickExit_MouseLeave" MouseLeftButtonDown="ClickExit_MouseLeftButtonDown" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="folder.ico"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BorderButtonTop" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="525" Height="25" BorderBrush="{x:Null}" Background="Black" BorderThickness="0"/>
     </Grid>
 </Window>
