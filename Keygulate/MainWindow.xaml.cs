@@ -25,6 +25,8 @@ namespace Keygulate
         public Stack<string> actionLine = new Stack<string>();
         private bool isRunning = false;
 
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -122,7 +124,7 @@ namespace Keygulate
         }
 
         //the next functions will deal with the play/pause button
-        private void PlayButton_Click(object sender, MouseButtonEventArgs e)
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             if (isRunning)
             {
