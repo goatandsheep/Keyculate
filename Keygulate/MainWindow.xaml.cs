@@ -23,7 +23,7 @@ namespace Keygulate
     {
         private int numLines = 0;
         public Stack<string> actionLine = new Stack<string>();
-        
+        private bool isRunning = false;
 
         public MainWindow()
         {
@@ -76,17 +76,31 @@ namespace Keygulate
             actionLine.Pop();
         }
 
-        //the following functions are functions that deal witht the layout
 
+        //---------------------------------------------------------------
+        //The following functions are functions that deal with the layout
+        //---------------------------------------------------------------
+
+        //The following will determine exit/pause actions
         //used by BorderButtonBottom, BorderButtonLeft, BorderButtonRight, BorderButtonTop, and ClickExit
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            if (isRunning)
+            {
+                //stop
+                isRunning = false;
+                //PlayButton.Background = Play Image
+                //ExitButton.Background = Exit Image
+            }
+            else
+            {
+                Close();    //exit
+            }
         }
 
         private void Exit_MouseEnter(object sender, EventArgs e)
         {
-            //change image to hover image
+            //change image to hover
             BorderButtonTop.Background = Brushes.Black;
             BorderButtonRight.Background = Brushes.Black;
             BorderButtonBottom.Background = Brushes.Black;
@@ -104,7 +118,38 @@ namespace Keygulate
 
         private void Exit_MouseLeftButtonDown(object sender, EventArgs e)
         {
-            //change image to click image
+            //change image to clicked image
+        }
+
+        //the next functions will deal with the play/pause button
+        private void PlayButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (isRunning)
+            {
+                isRunning = false;
+                //PlayButton.Background = Play Image
+                //ExitButton.Background = Exit Image
+            }
+            else
+            {
+                isRunning = true;
+                //PlayButton.Background = Pause Image
+                //ExitButton.Background = Pause Image
+            }
+        }
+        private void PlayButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //change image to clicked image
+        }
+
+        private void PlayButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            //change image back to original
+        }
+
+        private void PlayButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            //change image to hover
         }
     }
 
