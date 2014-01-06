@@ -1,0 +1,24 @@
+// Add the HotKeyModel.cs to your solution/project
+// Import the hotkey model at the top of your MyWindow.xaml.cs file with..
+
+using HotkeyModel;
+
+
+// Example hotkey, ctrl+space to call function doHotkey()
+// This goes inside your constructor for the main window in MyWindow.xaml.cs
+
+public MyWindow()
+{
+	Loaded += (s, e) =>
+	{
+		_hotkey = new HotKey(ModifierKeys.Control, Keys.Space, this);
+		_hotkey.HotKeyPressed += (k) => doHotkey();
+	};
+}
+
+
+private doHotkey()
+{
+	// Do something
+}
+

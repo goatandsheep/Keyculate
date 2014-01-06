@@ -103,19 +103,19 @@ namespace Keygulate
         private void Exit_MouseEnter(object sender, EventArgs e)
         {
             //change image to hover
-            BorderButtonTop.Background = Brushes.Black;
-            BorderButtonRight.Background = Brushes.Black;
-            BorderButtonBottom.Background = Brushes.Black;
-            BorderButtonLeft.Background = Brushes.Black;
+            RectangleTop.Fill = Brushes.Black;
+            RectangleRight.Fill = Brushes.Black;
+            RectangleBottom.Fill = Brushes.Black;
+            RectangleLeft.Fill = Brushes.Black;
         }
 
         private void Exit_MouseLeave(object sender, EventArgs e)
         {
             //change image back to original
-            BorderButtonTop.Background = Brushes.Transparent;
-            BorderButtonRight.Background = Brushes.Transparent;
-            BorderButtonBottom.Background = Brushes.Transparent;
-            BorderButtonLeft.Background = Brushes.Transparent;
+            RectangleTop.Fill = Brushes.Transparent;
+            RectangleRight.Fill = Brushes.Transparent;
+            RectangleBottom.Fill = Brushes.Transparent;
+            RectangleLeft.Fill = Brushes.Transparent;
         }
 
         private void Exit_MouseLeftButtonDown(object sender, EventArgs e)
@@ -154,9 +154,4 @@ namespace Keygulate
             //change image to hover
         }
     }
-
-    /*public class Stack
-    {
-        //blah
-    }*/
 }
