@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HotkeyModel;
 
 namespace Keygulate
 {
@@ -30,6 +31,12 @@ namespace Keygulate
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += (s, e) =>
+            {
+                _hotkey = new HotKey(ModifierKeys.Control, Keys.Space, this);
+                _hotkey.HotKeyPressed += (k) => keyPressed();
+            };
         }
 
         //GlobalKeyboardHook keyLog;
@@ -67,7 +74,7 @@ namespace Keygulate
         }
 
         //implement a function that deals with global key-presses that adds commands to the stack
-        private void keyPressed(object sender, KeyPressEventArgs e)
+        private void keyPressed()
         {
             actionLine.Push("CTRL");
         }
