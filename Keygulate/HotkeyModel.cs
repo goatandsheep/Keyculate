@@ -1,4 +1,6 @@
-﻿using System;
+﻿//library that isn't mine
+
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;

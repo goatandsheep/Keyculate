@@ -26,16 +26,19 @@ namespace Keygulate
         public Stack<string> actionLine = new Stack<string>();
         private bool isRunning = false;
 
+        public HotKey _hotkey;
 
 
         public MainWindow()
         {
             InitializeComponent();
 
-            Loaded += (s, e) =>
-            {
-                _hotkey = new HotKey(ModifierKeys.Control, Keys.Space, this);
+            Loaded += (s, e) => //handler the runs whatever function is after '=>'; (sender, event)
+            {   //the function following the '=>' arrow is an unnamed function
+
+                _hotkey = new HotKey(ModifierKeys.Control, Keys.Space, this); //
                 _hotkey.HotKeyPressed += (k) => keyPressed();
+                
             };
         }
 
