@@ -10,3 +10,5 @@ http://www.codeproject.com/Articles/7294/Processing-Global-Mouse-and-Keyboard-Ho
 
 This project is my first project in C#. I've also never worked with a layout before, so this project is meant to be a simple project to introduce myself to the language and also to work as a tool to help me do tutorials in a Microsoft Word plugin, called MathType. You can see all my notes are done in MathType on my webpage:
 https://sites.google.com/site/macengfifteen/
+
+> **Warning**: This project has been abandoned. I struggled with figuring out global key presses in C# and found an [alternative program](http://osherove.com/blog/2007/5/29/key-jedi-103-renamed-from-shortwatcher.html) that serves the same purpose
